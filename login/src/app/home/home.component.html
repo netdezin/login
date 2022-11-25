@@ -1,0 +1,41 @@
+<div class="text-center">
+
+    <main class="form-signin w-100 m-auto">
+        <form #form1="ngForm" (submit)="login(form1)" [class.loading]="loading">
+            <img class="mb-4" src="https://www.citytraxonline.com/2023/myimages/CT_Logo.png" width="150" height="150"
+                alt="">
+            <h2>CityTRAX</h2>
+            <p>Making events easy!</p>
+            <h1 class="h3 mb-3 fw-normal">Login<i class="bi bi-file-lock2"></i></h1>
+           
+            <div class="form-floating mb-3">
+              
+                <input class="form-control" type="email" name="email" id="email" placeholder="mail@example.com" required
+                    ngModel  />
+                <label for="pwd">mail@example.com</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input class="form-control" type="password" name="password" id="pwd" placeholder="Password" required
+                    ngModel />
+                <label for="pwd">Password</label>
+            </div>
+            <div class="form-button">
+                <button class="w-50 btn matblue" id="Login" type="submit" *ngIf="!loading">Login</button>
+                <div class="spinner-border text-light" *ngIf="loading"></div>
+            </div>
+        </form>
+    </main>
+
+    <div *ngIf="users" class="row" style="background-color:transparent;">
+        <div *ngFor="let user of users" class="ecard">
+
+            {{user.fname}}<br>
+            {{user.role}}<br>
+            {{user.companyid}}<br>
+
+        </div>
+
+    </div>
+
+
+</div>
